@@ -1,0 +1,8 @@
+{
+  "name": "antara-assignment-4-salon-management-api",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "cd \"Antara Palwankar 150096725126\" && npm install",
+    "start": "cd \"Antara Palwankar 150096725126\" && node server.js"
+  }
+}
