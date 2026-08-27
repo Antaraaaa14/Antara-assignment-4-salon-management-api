@@ -89,7 +89,7 @@ const login = async (req, res) => {
                 id: user.id,
                 email: user.email
             },
-            process.env.JWT_SECRET,
+            process.env.JWT_SECRET || 'salon_jwt_secret_key_150096725126',
             {
                 expiresIn: '1h'
             }
