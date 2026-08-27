@@ -1,84 +1,84 @@
 # 💇‍♀️ Salon Management API
 
-A robust RESTful API built with **Node.js**, **Express**, and **Supabase** for managing salons, services, and user authentication.
+A RESTful backend API developed using **Node.js, Express.js, and Supabase** to manage salon information, salon services, and user authentication.
 
 ---
 
 ## 🚀 Features
-- **User Authentication**: Secure user registration and login using JWT & bcrypt.
-- **Salon Management**: Add, update, view, and delete salons.
-- **Service Management**: Salons can have multiple services with pricing, duration, and availability tracking.
-- **Database**: Fully integrated with **Supabase** (PostgreSQL) for seamless data storage.
+
+- **User Authentication:** Allows users to register and log in securely using JWT authentication and bcrypt.
+- **Salon Management:** Provides APIs to create, view, update, and delete salon information.
+- **Service Management:** Supports adding and managing different salon services along with their price, duration, and availability.
+- **Database Integration:** Uses **Supabase PostgreSQL** to store and manage users, salons, and services.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
+
 - **Backend:** Node.js, Express.js
 - **Database:** Supabase (PostgreSQL)
-- **Authentication:** JSON Web Tokens (JWT), bcryptjs
+- **Authentication:** JWT, bcryptjs
 
 ---
 
-## 📸 Database Previews (Supabase)
+## 📸 Database Previews
 
-*(Below are screenshots of the Supabase tables holding our data)*
+The project uses Supabase to store the application data in different tables.
 
 ### 1. Users Table
-> Add your screenshot for Users here!
-<!-- ![Users Table Screenshot](./docs/users.png) -->
+
+Add the screenshot of the **Users** table here.
 
 ### 2. Salons Table
-> Add your screenshot for Salons here!
-<!-- ![Salons Table Screenshot](./docs/salons.png) -->
+
+Add the screenshot of the **Salons** table here.
 
 ### 3. Services Table
-> Add your screenshot for Services here!
-<!-- ![Services Table Screenshot](./docs/services.png) -->
+
+Add the screenshot of the **Services** table here.
 
 ---
 
 ## 📝 API Endpoints
 
-### 🔐 Authentication Endpoints
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `POST` | `/register` | Register a new user | ❌ No |
-| `POST` | `/login`    | Login to get JWT Token| ❌ No |
+### 🔐 Authentication APIs
 
-### 🏢 Salon Endpoints
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `GET`  | `/salons` | Get all salons | ❌ No |
-| `GET`  | `/salons/:id` | Get a salon by ID | ❌ No |
-| `GET`  | `/salons/top` | Get top 5 salons by rating | ❌ No |
-| `GET`  | `/salons/city/:city` | Get salons in a specific city | ❌ No |
-| `POST` | `/salons` | Create a new salon | ✅ Yes (Bearer Token) |
-| `PUT`  | `/salons/:id` | Update salon details | ✅ Yes (Bearer Token) |
-| `DELETE`| `/salons/:id` | Delete a salon | ✅ Yes (Bearer Token) |
+| Method | Endpoint | Description | Authentication |
+|---|---|---|---|
+| `POST` | `/register` | Creates a new user account | ❌ No |
+| `POST` | `/login` | Logs in the user and returns a JWT token | ❌ No |
 
-### ✂️ Service Endpoints
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `GET`  | `/salons/:id/services` | Get all services for a salon | ❌ No |
-| `GET`  | `/services/available` | Get all currently available services | ❌ No |
-| `POST` | `/salons/:id/services` | Add a new service to a salon | ✅ Yes (Bearer Token) |
-| `PUT`  | `/services/:id` | Update a service | ✅ Yes (Bearer Token) |
-| `DELETE`| `/services/:id` | Delete a service | ✅ Yes (Bearer Token) |
+### 🏢 Salon APIs
+
+| Method | Endpoint | Description | Authentication |
+|---|---|---|---|
+| `GET` | `/salons` | Displays all salons | ❌ No |
+| `GET` | `/salons/:id` | Displays a particular salon | ❌ No |
+| `GET` | `/salons/top` | Displays the top 5 salons according to rating | ❌ No |
+| `GET` | `/salons/city/:city` | Finds salons available in a particular city | ❌ No |
+| `POST` | `/salons` | Adds a new salon | ✅ Bearer Token |
+| `PUT` | `/salons/:id` | Updates existing salon information | ✅ Bearer Token |
+| `DELETE` | `/salons/:id` | Removes a salon | ✅ Bearer Token |
+
+### ✂️ Service APIs
+
+| Method | Endpoint | Description | Authentication |
+|---|---|---|---|
+| `GET` | `/salons/:id/services` | Shows all services of a salon | ❌ No |
+| `GET` | `/services/available` | Shows currently available services | ❌ No |
+| `POST` | `/salons/:id/services` | Adds a service to a salon | ✅ Bearer Token |
+| `PUT` | `/services/:id` | Modifies service information | ✅ Bearer Token |
+| `DELETE` | `/services/:id` | Deletes a service | ✅ Bearer Token |
 
 ---
 
-## 💻 Local Setup
+## 💻 Running the Project Locally
 
 1. Clone the repository.
-2. Run `npm install` to install dependencies.
-3. Create a `.env` file in the root directory with the following variables:
-   ```env
-   PORT=3000
-   SUPABASE_URL=your_supabase_url
-   SUPABASE_ANON_KEY=your_supabase_key
-   JWT_SECRET=your_jwt_secret
-   ```
-4. Start the server using `node server.js` (or `npm run dev` if you add nodemon).
-5. The API will be available at `http://localhost:3000`.
 
----
+2. Open the project folder in the terminal.
+
+3. Install all required packages:
+
+```bash
+npm install
