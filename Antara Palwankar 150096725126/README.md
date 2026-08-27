@@ -1,5 +1,7 @@
 # 💇‍♀️ Salon Management API
 
+live Deploy link: https://antara-assignment-4-salon-management-api-2gga.onrender.com
+
 A RESTful backend API developed using **Node.js, Express.js, and Supabase** to manage salon information, salon services, and user authentication.
 
 ---
